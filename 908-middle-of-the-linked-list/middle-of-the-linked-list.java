@@ -10,7 +10,7 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        ListNode curr = head;
+        /*ListNode curr = head; //find mid node then restart with curr head then find mid 0(3n/2)
         int length =0;
         while(curr != null){
            length++;
@@ -24,6 +24,17 @@ class Solution {
         for(int i = 0; i< mid;i++){
             curr = curr.next;
         }
-        return curr;
+        return curr;*/
+
+
+        ListNode slow = head; // use fast and 
+        ListNode fast = head;
+
+        while( fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
     }
 }
